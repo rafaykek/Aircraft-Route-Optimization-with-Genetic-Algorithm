@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    /* Your existing CSS styles go here */
+
+     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        * {{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }}
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row; /* Set the direction to row to align elements horizontally */
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        flex: 1; /* Make the container take up half of the available space */
+        max-width: 50%; /* Limit the container to half of the available width */
+    }
+
+    .optimized-path {
+        flex: 1; /* Make the optimized path take up the other half of the available space */
+        max-width: 50%; /* Limit the optimized path to half of the available width */
+        padding: 20px; /* Add some padding to the optimized path */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a shadow for separation */
+    }
+
+        .container p{{
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.3px;
+            margin: 20px 0;
+        }}
+
+        .container span{{
+            font-size: 12px;
+        }}
+
+        .container a{{
+            color: #333;
+            font-size: 13px;
+            text-decoration: none;
+            margin: 15px 0 10px;
+        }}
+
+        .container button{{
+            background-color: #1ac0a1;
+            color: #fff;
+            font-size: 12px;
+            padding: 10px 45px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            cursor: pointer;
+        }}
+
+        .container button.hidden{{
+            background-color: transparent;
+            border-color: #fff;
+        }}
+
+        .container form{{
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            height: 100%;
+        }}
+
+        .container input{{
+            background-color: #eee;
+            border: none;
+            margin: 8px 0;
+            padding: 10px 15px;
+            font-size: 13px;
+            border-radius: 8px;
+            width: 100%;
+            outline: none;
+        }}
+
+        .form-container{{
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s ease-in-out;
+        }}
+
+
+        .container.active .sign-in{{
+            transform: translateX(100%);
+        }}
+
+
+        .container.active .sign-up{{
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+            animation: move 0.6s;
+        }}
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <h1>Aircraft Route Optimization with Genetic Algorithm!</h1><br>
+        <form method="POST">
+            <input type="text" name="source" placeholder="Source">
+            <br><input type="text" name="destination" placeholder="Destination">
+            <br><input type="text" name="date" placeholder="Date - DDD-MMM-YYY">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="optimized-path">
+        <h2>Optimized Path:</h2>
+        <p>{optimizedPath}</p>
+    </div>
+</body>
+</html>
